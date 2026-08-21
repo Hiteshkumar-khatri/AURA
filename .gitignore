@@ -9,9 +9,10 @@ venv/
 # Data files - never commit raw data
 data/raw/*
 data/processed/*
+data/sample/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-!data/sample/
+!data/sample/.gitkeep
 
 # Environment variables
 .env
