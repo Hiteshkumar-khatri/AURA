@@ -12,5 +12,19 @@ services:
       - aura_postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
 
+  superset:
+    build: ./superset
+    container_name: aura-superset
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=aura_superset_secret_key
+    volumes:
+      - aura_superset_data:/app/superset_home
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
 volumes:
   aura_postgres_data:
+  aura_superset_data:
