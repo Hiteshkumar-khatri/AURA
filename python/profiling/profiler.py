@@ -10,7 +10,6 @@ DB_NAME  = "aura"
 DB_USER  = "aura_user"
 DB_PASS  = "aura_pass"
 
-# ── Dataset list ─────────────────────────────────────────────
 DATASETS = [
     "olist_orders_dataset.csv",
     "olist_customers_dataset.csv",
@@ -23,17 +22,17 @@ DATASETS = [
     "product_category_name_translation.csv",
 ]
 
-# ── Connect to database ──────────────────────────────────────
+# ── Connect ──────────────────────────────────────────────────
 def get_connection():
     return psycopg2.connect(
         host=DB_HOST, port=DB_PORT,
         database=DB_NAME, user=DB_USER, password=DB_PASS
     )
 
-# ── Profile a single dataset ─────────────────────────────────
-def profile_dataset(cursor, conn, filename):
-    filepath    = os.path.join(DATA_DIR, filename)
-    dataset     = filename.replace(".csv", "")
+# ── Profile one dataset ──────────────────────────────────────
+def profile_dataset(cursor, conn, filename, run_id):
+    filepath = os.path.join(DATA_DIR, filename)
+    dataset  = filename.replace(".csv", "")
 
     print(f"\n── {dataset} {'─' * (50 - len(dataset))}")
 
@@ -46,11 +45,10 @@ def profile_dataset(cursor, conn, filename):
     job_id = cursor.fetchone()[0]
     conn.commit()
 
-    # Load dataset
+    # Load
     print(f"   Loading...")
     df = pd.read_csv(filepath)
 
-    # Basic stats
     row_count      = df.shape[0]
     column_count   = df.shape[1]
     duplicate_rows = int(df.duplicated().sum())
@@ -59,17 +57,17 @@ def profile_dataset(cursor, conn, filename):
     print(f"   Columns:    {column_count}")
     print(f"   Duplicates: {duplicate_rows:,}")
 
-    # Save dataset profile
+    # Save dataset profile — now includes run_id
     cursor.execute("""
         INSERT INTO dataset_profiles
-            (job_id, dataset_name, row_count, column_count, duplicate_rows)
-        VALUES (%s, %s, %s, %s, %s)
+            (job_id, run_id, dataset_name, row_count, column_count, duplicate_rows)
+        VALUES (%s, %s, %s, %s, %s, %s)
         RETURNING profile_id;
-    """, (job_id, dataset, int(row_count), int(column_count), duplicate_rows))
+    """, (job_id, run_id, dataset, int(row_count), int(column_count), duplicate_rows))
     profile_id = cursor.fetchone()[0]
     conn.commit()
 
-    # Profile each column
+    # Profile columns
     print(f"   Columns:")
     for col in df.columns:
         missing_count = int(df[col].isnull().sum())
@@ -102,7 +100,7 @@ def profile_dataset(cursor, conn, filename):
     conn.commit()
 
     print(f"   ✅ Saved (job_id={job_id}, profile_id={profile_id})")
-    return job_id
+    return row_count
 
 # ── Main ─────────────────────────────────────────────────────
 def main():
@@ -113,18 +111,45 @@ def main():
     conn   = get_connection()
     cursor = conn.cursor()
 
+    # Create a new profiling run
+    cursor.execute("""
+        INSERT INTO profiling_runs (status)
+        VALUES ('running')
+        RETURNING run_id;
+    """)
+    run_id = cursor.fetchone()[0]
+    conn.commit()
+    print(f"\nRun ID: {run_id}")
+
+    total_rows     = 0
+    datasets_count = 0
+
     for filename in DATASETS:
         try:
-            profile_dataset(cursor, conn, filename)
+            rows = profile_dataset(cursor, conn, filename, run_id)
+            total_rows     += rows
+            datasets_count += 1
         except Exception as e:
             print(f"   ❌ Failed: {e}")
 
-    cursor.close()
-    conn.close()
+    # Mark run complete
+    cursor.execute("""
+        UPDATE profiling_runs
+        SET status         = 'completed',
+            finished_at    = NOW(),
+            datasets_count = %s,
+            total_rows     = %s
+        WHERE run_id = %s;
+    """, (datasets_count, total_rows, run_id))
+    conn.commit()
 
     print("\n" + "=" * 60)
-    print("Profiling complete")
+    print(f"Profiling complete — Run ID: {run_id}")
+    print(f"Datasets: {datasets_count}   Total rows: {total_rows:,}")
     print("=" * 60)
+
+    cursor.close()
+    conn.close()
 
 if __name__ == "__main__":
     main()
