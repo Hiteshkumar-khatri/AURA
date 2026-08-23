@@ -13,3 +13,7 @@ DB_PASS = os.getenv("DB_PASS", "aura_pass")
 
 # App
 SECRET_KEY = os.getenv("SECRET_KEY", "changeme")
+
+# OpenRouter AI
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_MODEL   = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.2-3b-instruct:free")
