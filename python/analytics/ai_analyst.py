@@ -7,10 +7,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from config import OPENROUTER_API_KEY, OPENROUTER_MODEL
 
 # ── Call OpenRouter ───────────────────────────────────────────
-def ask_ai(system_prompt, user_prompt):
+def call_ai(messages, max_tokens=800):
     if not OPENROUTER_API_KEY:
         return "AI not configured — add OPENROUTER_API_KEY to .env"
-
     try:
         response = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
@@ -20,41 +19,39 @@ def ask_ai(system_prompt, user_prompt):
             },
             json={
                 "model": OPENROUTER_MODEL,
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user",   "content": user_prompt}
-                ],
-                "max_tokens": 800,
+                "messages": messages,
+                "max_tokens": max_tokens,
             },
             timeout=30
         )
         data = response.json()
-
         if "error" in data:
             return f"AI error: {data['error'].get('message', 'Unknown error')}"
-
         return data["choices"][0]["message"]["content"]
-
     except Exception as e:
         return f"AI unavailable: {str(e)}"
 
-# ── Analyze dataset and generate insights ─────────────────────
+# ── Analyze dataset ───────────────────────────────────────────
 def analyze_dataset(filename, row_count, col_count,
                     duplicate_rows, score, findings,
                     numeric_stats, date_col, scenario):
 
-    system_prompt = """You are AURA, a professional data analyst AI.
-You analyze datasets and provide clear, honest, actionable insights.
-
+    messages = [
+        {
+            "role": "system",
+            "content": """You are AURA, a professional data analyst AI.
+Analyze datasets and provide clear, honest, actionable insights.
 Rules:
-- Only use the data provided to you. Never invent numbers.
-- Clearly separate observations from recommendations.
-- Be concise — maximum 5 bullet points per section.
-- Use plain English, not technical jargon.
-- If data is insufficient to draw conclusions, say so honestly.
+- Only use the data provided. Never invent numbers.
+- Separate observations from recommendations.
+- Maximum 5 bullet points per section.
+- Use plain English, not jargon.
+- If data is insufficient, say so honestly.
 - Never claim causation without evidence."""
-
-    user_prompt = f"""Analyze this dataset and provide insights:
+        },
+        {
+            "role": "user",
+            "content": f"""Analyze this dataset:
 
 FILE: {filename}
 SCENARIO: {scenario}
@@ -69,46 +66,116 @@ QUALITY FINDINGS:
 NUMERIC STATISTICS:
 {numeric_stats}
 
-DATE COLUMN DETECTED: {date_col if date_col else 'None'}
+DATE COLUMN: {date_col if date_col else 'None'}
 
 Provide:
-1. DATASET SUMMARY (2-3 sentences about what this data appears to be)
-2. KEY CONCERNS (top issues found, if any)
-3. RECOMMENDATIONS (what the user should do next)
-4. WHAT ANALYSIS IS POSSIBLE (what insights can be extracted from this data)
+1. DATASET SUMMARY (2-3 sentences)
+2. KEY CONCERNS (top issues found)
+3. RECOMMENDATIONS (what to do next)
+4. WHAT ANALYSIS IS POSSIBLE"""
+        }
+    ]
+    return call_ai(messages)
 
-Be specific and actionable."""
+# ── Answer question with tool results ────────────────────────
+def answer_with_tools(question, filename, columns,
+                      tool_results, conversation_history=None):
 
-    return ask_ai(system_prompt, user_prompt)
+    system_msg = {
+        "role": "system",
+        "content": """You are AURA, a professional data analyst AI.
+You have been given real calculated results from analytical tools.
+Your job is to explain these results clearly and honestly.
 
-# ── Answer a specific user question ──────────────────────────
-def answer_question(question, filename, row_count,
-                    col_count, findings, numeric_stats,
-                    columns, date_col):
+CRITICAL RULES:
+- Only use the tool results provided. Never invent numbers.
+- Every specific number in your answer must come from the tool results.
+- Distinguish between what the data SHOWS vs what might EXPLAIN it.
+- If a question cannot be answered from available data, say so clearly.
+- Be concise and specific. No filler words.
+- End with one concrete recommendation based on the evidence."""
+    }
 
-    system_prompt = """You are AURA, a professional data analyst AI.
-A user has uploaded a dataset and is asking you a question about it.
+    # Build tool results summary
+    tool_summary = ""
+    for tool_name, result in tool_results.items():
+        tool_summary += f"\n--- {tool_name} ---\n{json.dumps(result, indent=2)}\n"
 
-Rules:
-- Only use the provided data context. Never invent numbers.
-- Be direct and specific.
-- If you cannot answer from the available data, say what additional data would be needed.
-- Distinguish between what the data shows vs what might explain it."""
+    user_msg = {
+        "role": "user",
+        "content": f"""Dataset: {filename}
+Columns: {', '.join(columns)}
 
-    user_prompt = f"""Dataset context:
-FILE: {filename}
-ROWS: {row_count:,}
-COLUMNS: {', '.join(columns)}
-DATE COLUMN: {date_col if date_col else 'None detected'}
-
-QUALITY FINDINGS:
-{chr(10).join(findings) if findings else 'No issues'}
-
-NUMERIC STATISTICS:
-{numeric_stats}
+REAL CALCULATED RESULTS FROM ANALYTICAL TOOLS:
+{tool_summary}
 
 USER QUESTION: {question}
 
-Answer the question based on the available data context."""
+Answer the question using ONLY the tool results above.
+Be specific with numbers. Show your reasoning."""
+    }
 
-    return ask_ai(system_prompt, user_prompt)
+    messages = [system_msg]
+
+    # Add conversation history for follow-up questions
+    if conversation_history:
+        messages.extend(conversation_history)
+
+    messages.append(user_msg)
+    return call_ai(messages, max_tokens=1000)
+
+# ── Plan which tools to run for a question ────────────────────
+def plan_analysis(question, overview):
+    messages = [
+        {
+            "role": "system",
+            "content": """You are AURA's analysis planner.
+Given a user question and dataset overview, decide which analytical tools to run.
+
+Available tools:
+- get_column_stats(column) — statistics for one column
+- group_by(metric, group) — breakdown by category
+- compare_periods(metric, period1, period2) — compare two time periods
+- monthly_trend(metric) — trend over time
+- detect_anomalies(metric) — find unusual values
+- calculate_correlation(col1, col2) — relationship between columns
+- top_contributors(metric, group) — what drives a metric
+- get_available_periods() — what time periods exist
+
+Respond with a JSON array of tool calls. Example:
+[
+  {"tool": "monthly_trend", "params": {"metric": "Sales_Amount"}},
+  {"tool": "group_by", "params": {"metric": "Sales_Amount", "group": "Region"}}
+]
+
+Only include tools that are relevant to the question.
+Maximum 4 tool calls. Return ONLY the JSON array, nothing else."""
+        },
+        {
+            "role": "user",
+            "content": f"""Question: {question}
+
+Dataset overview:
+{json.dumps(overview, indent=2)}
+
+Which tools should I run to answer this question?"""
+        }
+    ]
+
+    response = call_ai(messages, max_tokens=300)
+
+    # Parse JSON response
+    try:
+        # Clean response — remove markdown if present
+        clean = response.strip()
+        if clean.startswith("`"):
+            clean = clean.split("`")[1]
+            if clean.startswith("json"):
+                clean = clean[4:]
+        return json.loads(clean.strip())
+    except:
+        # Fallback — run basic tools
+        numeric_cols = overview.get("numeric_cols", [])
+        if numeric_cols:
+            return [{"tool": "get_column_stats", "params": {"column": numeric_cols[0]}}]
+        return []
