@@ -10,6 +10,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 # ── Temporary storage ─────────────────────────────────────────
 TEMP_FILES = {}
+AGENTS     = {}  # stores AnalystAgent per session for conversation context
 
 app = FastAPI(title="AURA Analytics")
 
@@ -347,19 +348,11 @@ async def analyze(files: list[UploadFile] = File(...)):
             options: {{ responsive: true }}
         }});"""
 
-    # ── AI Analysis ───────────────────────────────────────────
-    from analytics.ai_analyst import analyze_dataset
-    ai_insights = analyze_dataset(
-        filename       = filename,
-        row_count      = row_count,
-        col_count      = col_count,
-        duplicate_rows = duplicate_rows,
-        score          = score,
-        findings       = [f.replace('<b>','').replace('</b>','') for f in findings],
-        numeric_stats  = numeric_stats_txt,
-        date_col       = date_col,
-        scenario       = scenario
-    )
+    # ── AI Analysis via Agent ─────────────────────────────────
+    from analytics.analyst_agent import AnalystAgent
+    agent = AnalystAgent(df, filename)
+    AGENTS[session_id] = agent
+    ai_insights = agent.get_initial_analysis()
 
     ai_html = ""
     for line in ai_insights.split("\n"):
@@ -669,41 +662,30 @@ async def ask(session_id: str, question: str = Form(...)):
     if session_id not in TEMP_FILES:
         return HTMLResponse("<h1>Session expired. Please re-upload.</h1>")
 
-    from analytics.ai_analyst import answer_question
+    from analytics.analyst_agent import AnalystAgent
 
-    data         = TEMP_FILES[session_id]
-    df           = data["df"]
-    filename     = data["filename"]
-    row_count    = df.shape[0]
-    col_count    = df.shape[1]
-    numeric_cols = df.select_dtypes(include="number").columns.tolist()
+    # Use existing agent if available (preserves conversation history)
+    if session_id in AGENTS:
+        agent = AGENTS[session_id]
+    else:
+        data     = TEMP_FILES[session_id]
+        agent    = AnalystAgent(data["df"], data["filename"])
+        AGENTS[session_id] = agent
 
-    findings = []
-    for col in df.columns:
-        pct = round(df[col].isnull().sum() / row_count * 100, 2)
-        if pct > 0:
-            findings.append(f"{col}: {pct}% missing")
+    result   = agent.answer(question)
+    answer   = result["answer"]
+    plan     = result["plan"]
+    audit    = result["audit_trail"]
 
-    numeric_stats = ""
-    for col in numeric_cols[:5]:
-        numeric_stats += f"{col}: mean={df[col].mean():.2f}, min={df[col].min():.2f}, max={df[col].max():.2f}\n"
+    # Build plan HTML
+    plan_html = ""
+    for step in plan:
+        plan_html += f"<li><code>{step['tool']}({step.get('params', {})})</code></li>"
 
-    date_col = None
-    for col in df.columns:
-        if any(kw in col.lower() for kw in ["date","time","month","year"]):
-            date_col = col
-            break
-
-    answer = answer_question(
-        question      = question,
-        filename      = filename,
-        row_count     = row_count,
-        col_count     = col_count,
-        findings      = findings,
-        numeric_stats = numeric_stats,
-        columns       = list(df.columns),
-        date_col      = date_col
-    )
+    # Build audit trail HTML
+    audit_html = ""
+    for entry in audit[-5:]:
+        audit_html += f"<li>{entry['time']} — <b>{entry['tool']}</b>: {entry['result']}</li>"
 
     answer_html = ""
     for line in answer.split("\n"):
@@ -714,6 +696,8 @@ async def ask(session_id: str, question: str = Form(...)):
             answer_html += f"<li style='margin-bottom:6px'>{line[2:]}</li>"
         elif line.startswith("**") and line.endswith("**"):
             answer_html += f"<h3 style='margin:15px 0 8px'>{line.replace('**','')}</h3>"
+        elif line.startswith("|"):
+            answer_html += f"<p style='font-family:monospace;font-size:0.85em'>{line}</p>"
         else:
             answer_html += f"<p style='margin-bottom:8px'>{line}</p>"
 
@@ -724,7 +708,7 @@ async def ask(session_id: str, question: str = Form(...)):
         <title>AURA — AI Answer</title>
         <style>
             body {{ font-family: 'Segoe UI', Arial, sans-serif;
-                   max-width: 800px; margin: 40px auto;
+                   max-width: 900px; margin: 40px auto;
                    padding: 20px; background: #f0f2f5; }}
             .card {{ background: white; border-radius: 10px;
                     padding: 25px; margin: 20px 0;
@@ -732,6 +716,7 @@ async def ask(session_id: str, question: str = Form(...)):
             h1 {{ color: #2c3e50; margin-bottom: 20px; }}
             h2 {{ color: #34495e; border-bottom: 2px solid #8e44ad;
                  padding-bottom: 8px; margin-bottom: 15px; }}
+            h3 {{ color: #2c3e50; margin: 15px 0 8px; }}
             .question {{ background: #f0f2f5; padding: 15px;
                         border-radius: 8px; margin-bottom: 20px;
                         font-style: italic; color: #555; }}
@@ -739,24 +724,55 @@ async def ask(session_id: str, question: str = Form(...)):
                       border-left: 4px solid #8e44ad;
                       padding: 20px; border-radius: 0 10px 10px 0;
                       line-height: 1.7; }}
+            .plan-box {{ background: #f0fff4;
+                        border-left: 4px solid #27ae60;
+                        padding: 15px; border-radius: 0 8px 8px 0;
+                        margin-bottom: 15px; }}
+            .audit-box {{ background: #fff8f0;
+                         border-left: 4px solid #f39c12;
+                         padding: 15px; border-radius: 0 8px 8px 0; }}
             .btn {{ display: inline-block; background: #3498db;
                    color: white; padding: 10px 20px;
                    border-radius: 8px; text-decoration: none; margin: 5px; }}
             .btn-gray {{ background: #95a5a6; }}
+            code {{ background: #f0f0f0; padding: 2px 6px;
+                   border-radius: 3px; font-size: 0.85em; }}
+            ul {{ padding-left: 20px; }}
         </style>
     </head>
     <body>
         <h1>🤖 AURA AI Analyst</h1>
+
         <div class="card">
             <h2>Your Question</h2>
             <div class="question">"{question}"</div>
+
+            <h2>Analysis Plan</h2>
+            <div class="plan-box">
+                <p style="color:#27ae60;font-size:0.9em;margin-bottom:8px">
+                    Tools AURA ran to answer your question:
+                </p>
+                <ul>{plan_html}</ul>
+            </div>
+
             <h2>AURA's Answer</h2>
             <div class="answer">
-                <ul style="padding-left:20px;list-style:none">
+                <ul style="list-style:none;padding-left:0">
                     {answer_html}
                 </ul>
             </div>
         </div>
+
+        <div class="card">
+            <h2>Audit Trail</h2>
+            <div class="audit-box">
+                <p style="color:#f39c12;font-size:0.9em;margin-bottom:8px">
+                    Every calculation AURA ran — nothing invented:
+                </p>
+                <ul>{audit_html if audit_html else '<li>No tool calls recorded</li>'}</ul>
+            </div>
+        </div>
+
         <a href="javascript:history.back()" class="btn btn-gray">← Back</a>
         <a href="/" class="btn">Upload New File</a>
     </body>
