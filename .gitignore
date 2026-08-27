@@ -13,6 +13,8 @@ data/sample/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/sample/.gitkeep
+# Session data - never commit user uploaded files
+data/sessions/
 
 # Environment variables
 .env
