@@ -179,3 +179,87 @@ Which tools should I run to answer this question?"""
         if numeric_cols:
             return [{"tool": "get_column_stats", "params": {"column": numeric_cols[0]}}]
         return []
+# ── Answer a specific question about a dataset ────────────────
+def answer_question(question, filename, row_count, col_count,
+                    findings, numeric_stats, columns, date_col):
+    messages = [
+        {
+            "role": "system",
+            "content": """You are AURA, a professional data analyst AI.
+Answer the user's question about their dataset clearly and honestly.
+Rules:
+- Only use the data provided. Never invent numbers.
+- Separate observations from recommendations.
+- Maximum 5 bullet points per section.
+- Use plain English, not jargon.
+- If data is insufficient to answer, say so honestly.
+- Never claim causation without evidence."""
+        },
+        {
+            "role": "user",
+            "content": f"""Answer this question about the dataset:
+
+QUESTION: {question}
+
+FILE: {filename}
+ROWS: {row_count:,}
+COLUMNS: {col_count}
+COLUMNS LIST: {', '.join(columns)}
+DATE COLUMN: {date_col if date_col else 'None'}
+
+QUALITY FINDINGS:
+{chr(10).join(findings) if findings else 'No issues found'}
+
+NUMERIC STATISTICS:
+{numeric_stats}
+
+Provide:
+1. DIRECT ANSWER (answer the question using the data)
+2. KEY EVIDENCE (specific numbers that support the answer)
+3. CAVEATS (limits / what the data cannot tell us)
+4. RECOMMENDED NEXT STEP"""
+        }
+    ]
+    return call_ai(messages)
+# ── Answer a specific question about a dataset ────────────────
+def answer_question(question, filename, row_count, col_count,
+                    findings, numeric_stats, columns, date_col):
+    messages = [
+        {
+            "role": "system",
+            "content": """You are AURA, a professional data analyst AI.
+Answer the user's question about their dataset clearly and honestly.
+Rules:
+- Only use the data provided. Never invent numbers.
+- Separate observations from recommendations.
+- Maximum 5 bullet points per section.
+- Use plain English, not jargon.
+- If data is insufficient to answer, say so honestly.
+- Never claim causation without evidence."""
+        },
+        {
+            "role": "user",
+            "content": f"""Answer this question about the dataset:
+
+QUESTION: {question}
+
+FILE: {filename}
+ROWS: {row_count:,}
+COLUMNS: {col_count}
+COLUMNS LIST: {', '.join(columns)}
+DATE COLUMN: {date_col if date_col else 'None'}
+
+QUALITY FINDINGS:
+{chr(10).join(findings) if findings else 'No issues found'}
+
+NUMERIC STATISTICS:
+{numeric}
+
+Provide:
+1. DIRECT ANSWER (answer the question using the data)
+2. KEY EVIDENCE (specific numbers that support the answer)
+3. CAVEATS (limits / what the data cannot tell us)
+4. RECOMMENDED NEXT STEP"""
+        }
+    ]
+    return call_ai(messages)

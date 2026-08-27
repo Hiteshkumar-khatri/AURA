@@ -1,0 +1,13 @@
+product_id,product_name,category,unit_price,unit_cost
+P001,Wireless Headphones,Electronics,8500,6200
+P002,Smartphone X,Electronics,65000,51000
+P003,Mechanical Keyboard,Electronics,12000,8200
+P004,Office Chair,Furniture,28000,19000
+P005,Standing Desk,Furniture,52000,36000
+P006,Running Shoes,Sports,15000,9500
+P007,Yoga Mat,Sports,4500,2400
+P008,Coffee Maker,Home,18000,11200
+P009,Air Fryer,Home,22000,14000
+P010,Backpack,Accessories,6500,3900
+P011,Smart Watch,Electronics,24000,16000
+P012,Water Bottle,Accessories,2500,1200

@@ -1,0 +1,601 @@
+customer_id,customer_name,city,segment,signup_date,region,age
+C0001,Customer 0001,,Consumer,2025-01-04,Punjab,54.0
+C0002,Customer 0002,Lahore,Corporate,2025-10-22,Punjab,49.0
+C0003,Customer 0003,Peshawar,Small Business,2026-01-23,KPK,61.0
+C0004,Customer 0004,Rawalpindi,Corporate,2025-10-14,Punjab,63.0
+C0005,Customer 0005,Karachi,Small Business,2025-07-19,Sindh,51.0
+C0006,Customer 0006,Multan,Corporate,2026-03-07,Punjab,35.0
+C0007,Customer 0007,Rawalpindi,Small Business,2025-07-12,Punjab,46.0
+C0008,Customer 0008,Rawalpindi,Consumer,2026-01-05,Punjab,37.0
+C0009,Customer 0009,Karachi,Corporate,2025-08-30,Sindh,47.0
+C0010,Customer 0010,Lahore,Consumer,2025-01-14,Punjab,56.0
+C0011,Customer 0011,Lahore,Consumer,2025-10-03,Punjab,35.0
+C0012,Customer 0012,Multan,Corporate,2025-01-26,Punjab,41.0
+C0013,Customer 0013,Islamabad,Small Business,2026-04-30,ICT,20.0
+C0014,Customer 0014,Peshawar,Small Business,2025-11-09,KPK,52.0
+C0015,Customer 0015,Lahore,Consumer,2025-07-13,Punjab,41.0
+C0016,Customer 0016,Karachi,Corporate,2025-09-10,Sindh,39.0
+C0017,Customer 0017,Lahore,Corporate,2025-11-18,Punjab,43.0
+C0018,Customer 0018,Karachi,Consumer,2025-05-16,Sindh,28.0
+C0019,Customer 0019,Peshawar,Consumer,2025-05-30,KPK,46.0
+C0020,Customer 0020,Islamabad,Consumer,2025-08-06,ICT,53.0
+C0021,Customer 0021,Rawalpindi,Corporate,2025-05-15,Punjab,34.0
+C0022,Customer 0022,Lahore,Consumer,2026-01-30,Punjab,24.0
+C0023,Customer 0023,Multan,Small Business,2025-02-23,Punjab,
+C0024,Customer 0024,Multan,Consumer,2026-03-06,Punjab,27.0
+C0025,Customer 0025,Rawalpindi,Small Business,2025-07-01,Punjab,35.0
+C0026,Customer 0026,Karachi,Consumer,2025-10-19,Sindh,47.0
+C0027,Customer 0027,Lahore,Corporate,2025-03-24,Punjab,23.0
+C0028,Customer 0028,Karachi,Consumer,2025-07-20,Sindh,53.0
+C0029,Customer 0029,Karachi,Consumer,2026-01-28,Sindh,28.0
+C0030,Customer 0030,Islamabad,Corporate,2025-05-21,ICT,
+C0031,Customer 0031,Rawalpindi,Small Business,2025-03-10,Punjab,52.0
+C0032,Customer 0032,Multan,Small Business,2025-09-29,Punjab,30.0
+C0033,Customer 0033,Karachi,Consumer,2025-03-26,Sindh,44.0
+C0034,Customer 0034,Lahore,Consumer,2025-06-13,Punjab,23.0
+C0035,Customer 0035,Lahore,Consumer,2025-08-23,Punjab,22.0
+C0036,Customer 0036,Karachi,Consumer,2025-10-21,Sindh,62.0
+C0037,Customer 0037,Karachi,Corporate,2025-11-29,Sindh,55.0
+C0038,Customer 0038,Lahore,Corporate,2025-12-18,Punjab,25.0
+C0039,Customer 0039,Karachi,Corporate,2026-03-16,Sindh,31.0
+C0040,Customer 0040,Islamabad,Small Business,2025-02-04,ICT,27.0
+C0041,Customer 0041,Lahore,Corporate,2025-07-08,Punjab,36.0
+C0042,Customer 0042,Peshawar,Corporate,2025-01-01,KPK,31.0
+C0043,Customer 0043,Rawalpindi,Consumer,2025-01-05,Punjab,
+C0044,Customer 0044,Karachi,Consumer,2025-04-21,Sindh,42.0
+C0045,Customer 0045,Peshawar,Corporate,2025-11-08,KPK,26.0
+C0046,Customer 0046,Peshawar,Small Business,2026-04-11,KPK,59.0
+C0047,Customer 0047,Lahore,Consumer,2026-02-07,Punjab,52.0
+C0048,Customer 0048,Karachi,Consumer,2025-12-03,Sindh,53.0
+C0049,Customer 0049,Islamabad,Corporate,2026-02-09,ICT,25.0
+C0050,Customer 0050,Karachi,Consumer,2025-03-31,Sindh,51.0
+C0051,Customer 0051,Karachi,Consumer,2026-03-13,Sindh,
+C0052,Customer 0052,Karachi,Small Business,2026-04-08,Sindh,26.0
+C0053,Customer 0053,Rawalpindi,Corporate,2025-02-19,Punjab,53.0
+C0054,Customer 0054,Islamabad,Consumer,2025-09-02,ICT,34.0
+C0055,Customer 0055,Rawalpindi,Small Business,2026-03-08,Punjab,55.0
+C0056,Customer 0056,Rawalpindi,Consumer,2025-09-05,Punjab,40.0
+C0057,Customer 0057,,Small Business,2026-03-14,Punjab,55.0
+C0058,Customer 0058,Lahore,Consumer,2026-05-02,Punjab,24.0
+C0059,Customer 0059,Karachi,Consumer,2025-09-04,Sindh,36.0
+C0060,Customer 0060,Karachi,Consumer,2025-01-31,Sindh,30.0
+C0061,Customer 0061,Islamabad,Consumer,2025-06-26,ICT,29.0
+C0062,Customer 0062,Lahore,Small Business,2025-04-22,Punjab,32.0
+C0063,Customer 0063,Lahore,Consumer,2025-09-04,Punjab,35.0
+C0064,Customer 0064,Rawalpindi,Consumer,2025-11-01,Punjab,23.0
+C0065,Customer 0065,Islamabad,Consumer,2025-08-30,ICT,51.0
+C0066,Customer 0066,Lahore,Corporate,2025-04-12,Punjab,43.0
+C0067,Customer 0067,Lahore,Corporate,2025-06-06,Punjab,56.0
+C0068,Customer 0068,Karachi,Small Business,2025-12-20,Sindh,51.0
+C0069,Customer 0069,Karachi,Consumer,2025-01-15,Sindh,25.0
+C0070,Customer 0070,Lahore,Consumer,2025-04-22,Punjab,21.0
+C0071,Customer 0071,Karachi,Consumer,2026-04-10,Sindh,37.0
+C0072,Customer 0072,Lahore,Consumer,2025-02-21,Punjab,40.0
+C0073,Customer 0073,Peshawar,Small Business,2025-08-04,KPK,29.0
+C0074,Customer 0074,Karachi,Corporate,2025-04-18,Sindh,54.0
+C0075,Customer 0075,Karachi,Consumer,2025-02-24,Sindh,45.0
+C0076,Customer 0076,Karachi,Consumer,2025-08-08,Sindh,53.0
+C0077,Customer 0077,Karachi,Small Business,2025-09-29,Sindh,23.0
+C0078,Customer 0078,Islamabad,Consumer,2025-04-02,ICT,
+C0079,Customer 0079,Lahore,Consumer,2025-02-10,Punjab,27.0
+C0080,Customer 0080,Rawalpindi,Consumer,2025-03-12,Punjab,39.0
+C0081,Customer 0081,Islamabad,Consumer,2025-12-05,ICT,38.0
+C0082,Customer 0082,Lahore,Consumer,2026-03-24,Punjab,56.0
+C0083,Customer 0083,Peshawar,Consumer,2025-04-04,KPK,31.0
+C0084,Customer 0084,Karachi,Consumer,2025-06-16,Sindh,29.0
+C0085,Customer 0085,Karachi,Corporate,2025-06-28,Sindh,33.0
+C0086,Customer 0086,,Consumer,2025-07-07,Sindh,34.0
+C0087,Customer 0087,Rawalpindi,Consumer,2025-05-08,Punjab,26.0
+C0088,Customer 0088,Lahore,Small Business,2025-01-29,Punjab,26.0
+C0089,Customer 0089,Karachi,Corporate,2025-10-01,Sindh,
+C0090,Customer 0090,Lahore,Consumer,2025-07-05,Punjab,39.0
+C0091,Customer 0091,Karachi,Consumer,2025-06-27,Sindh,34.0
+C0092,Customer 0092,Rawalpindi,Small Business,2025-05-18,Punjab,36.0
+C0093,Customer 0093,Lahore,Consumer,2026-04-29,Punjab,51.0
+C0094,Customer 0094,Lahore,Consumer,2025-11-14,Punjab,29.0
+C0095,Customer 0095,Karachi,Small Business,2025-08-06,Sindh,60.0
+C0096,Customer 0096,Islamabad,Consumer,2025-04-17,ICT,53.0
+C0097,Customer 0097,Lahore,Corporate,2026-02-21,Punjab,26.0
+C0098,Customer 0098,Karachi,Consumer,2026-04-07,Sindh,32.0
+C0099,Customer 0099,Karachi,Corporate,2025-01-17,Sindh,26.0
+C0100,Customer 0100,Multan,Consumer,2026-04-29,Punjab,30.0
+C0101,Customer 0101,Multan,Consumer,2025-12-30,Punjab,35.0
+C0102,Customer 0102,Rawalpindi,Consumer,2025-02-21,Punjab,24.0
+C0103,Customer 0103,Karachi,Consumer,2026-01-27,Sindh,18.0
+C0104,Customer 0104,Multan,Small Business,2025-02-25,Punjab,38.0
+C0105,Customer 0105,Rawalpindi,Consumer,2025-01-27,Punjab,50.0
+C0106,Customer 0106,Rawalpindi,Consumer,2025-03-01,Punjab,32.0
+C0107,Customer 0107,Lahore,Corporate,2025-08-28,Punjab,58.0
+C0108,Customer 0108,Karachi,Corporate,2025-11-19,Sindh,35.0
+C0109,Customer 0109,Karachi,Consumer,2025-07-31,Sindh,60.0
+C0110,Customer 0110,Multan,Consumer,2025-03-05,Punjab,29.0
+C0111,Customer 0111,Lahore,Small Business,2025-04-14,Punjab,43.0
+C0112,Customer 0112,Karachi,Corporate,2026-03-20,Sindh,53.0
+C0113,Customer 0113,Karachi,Corporate,2026-05-16,Sindh,20.0
+C0114,Customer 0114,Islamabad,Small Business,2026-01-28,ICT,61.0
+C0115,Customer 0115,Karachi,Corporate,2025-02-23,Sindh,35.0
+C0116,Customer 0116,Peshawar,Consumer,2026-03-03,KPK,41.0
+C0117,Customer 0117,Rawalpindi,Consumer,2025-12-26,Punjab,47.0
+C0118,Customer 0118,Rawalpindi,Consumer,2025-10-01,Punjab,48.0
+C0119,Customer 0119,Lahore,Corporate,2025-03-16,Punjab,19.0
+C0120,Customer 0120,Islamabad,Small Business,2026-06-03,ICT,58.0
+C0121,Customer 0121,Islamabad,Consumer,2025-08-19,ICT,47.0
+C0122,Customer 0122,Islamabad,Consumer,2025-01-23,ICT,64.0
+C0123,Customer 0123,Karachi,Consumer,2025-04-20,Sindh,40.0
+C0124,Customer 0124,Lahore,Small Business,2025-07-28,Punjab,46.0
+C0125,Customer 0125,Karachi,Consumer,2025-02-02,Sindh,38.0
+C0126,Customer 0126,Lahore,Consumer,2025-06-18,Punjab,59.0
+C0127,Customer 0127,Karachi,Consumer,2025-09-01,Sindh,57.0
+C0128,Customer 0128,Karachi,Consumer,2026-05-09,Sindh,60.0
+C0129,Customer 0129,,Consumer,2025-02-14,Sindh,41.0
+C0130,Customer 0130,Islamabad,Consumer,2025-10-27,ICT,55.0
+C0131,Customer 0131,Karachi,Consumer,2026-04-22,Sindh,
+C0132,Customer 0132,Multan,Consumer,2026-02-24,Punjab,39.0
+C0133,Customer 0133,Islamabad,Consumer,2026-04-26,ICT,53.0
+C0134,Customer 0134,Karachi,Consumer,2025-03-30,Sindh,21.0
+C0135,Customer 0135,Islamabad,Consumer,2026-02-21,ICT,51.0
+C0136,Customer 0136,Karachi,Corporate,2026-05-24,Sindh,18.0
+C0137,Customer 0137,Multan,Consumer,2025-06-19,Punjab,45.0
+C0138,Customer 0138,Lahore,Consumer,2025-09-17,Punjab,40.0
+C0139,Customer 0139,Rawalpindi,Consumer,2025-10-04,Punjab,40.0
+C0140,Customer 0140,Karachi,Consumer,2025-09-14,Sindh,41.0
+C0141,Customer 0141,Lahore,Consumer,2025-05-31,Punjab,
+C0142,Customer 0142,Lahore,Consumer,2026-05-20,Punjab,37.0
+C0143,Customer 0143,Multan,Small Business,2026-05-13,Punjab,39.0
+C0144,Customer 0144,Islamabad,Consumer,2025-07-17,ICT,44.0
+C0145,Customer 0145,Lahore,Consumer,2026-02-23,Punjab,53.0
+C0146,Customer 0146,Karachi,Consumer,2025-07-26,Sindh,43.0
+C0147,Customer 0147,Karachi,Consumer,2026-02-18,Sindh,48.0
+C0148,Customer 0148,Lahore,Consumer,2025-11-01,Punjab,57.0
+C0149,Customer 0149,Lahore,Corporate,2025-09-02,Punjab,64.0
+C0150,Customer 0150,Karachi,Small Business,2025-03-08,Sindh,23.0
+C0151,Customer 0151,Peshawar,Consumer,2025-12-07,KPK,51.0
+C0152,Customer 0152,Multan,Consumer,2025-06-16,Punjab,28.0
+C0153,Customer 0153,Karachi,Consumer,2025-04-23,Sindh,27.0
+C0154,Customer 0154,Lahore,Consumer,2025-04-11,Punjab,55.0
+C0155,Customer 0155,Karachi,Corporate,2026-05-26,Sindh,21.0
+C0156,Customer 0156,Islamabad,Consumer,2025-02-23,ICT,57.0
+C0157,Customer 0157,Karachi,Consumer,2026-02-20,Sindh,54.0
+C0158,Customer 0158,Islamabad,Small Business,2026-03-27,ICT,64.0
+C0159,Customer 0159,Rawalpindi,Consumer,2025-01-17,Punjab,49.0
+C0160,Customer 0160,Rawalpindi,Consumer,2025-11-03,Punjab,59.0
+C0161,Customer 0161,Karachi,Corporate,2025-10-28,Sindh,23.0
+C0162,Customer 0162,Multan,Consumer,2025-07-06,Punjab,59.0
+C0163,Customer 0163,Karachi,Consumer,2025-12-13,Sindh,25.0
+C0164,Customer 0164,Karachi,Consumer,2025-08-01,Sindh,32.0
+C0165,Customer 0165,Lahore,Small Business,2025-08-17,Punjab,24.0
+C0166,Customer 0166,Lahore,Consumer,2025-08-13,Punjab,36.0
+C0167,Customer 0167,Peshawar,Consumer,2026-02-21,KPK,53.0
+C0168,Customer 0168,Peshawar,Consumer,2025-11-26,KPK,30.0
+C0169,Customer 0169,Karachi,Consumer,2025-07-17,Sindh,56.0
+C0170,Customer 0170,Multan,Corporate,2026-04-27,Punjab,46.0
+C0171,Customer 0171,Karachi,Consumer,2026-02-22,Sindh,47.0
+C0172,Customer 0172,Lahore,Consumer,2026-05-01,Punjab,62.0
+C0173,Customer 0173,Karachi,Consumer,2026-01-15,Sindh,38.0
+C0174,Customer 0174,Multan,Small Business,2025-07-23,Punjab,34.0
+C0175,Customer 0175,Karachi,Consumer,2026-02-06,Sindh,64.0
+C0176,Customer 0176,Karachi,Small Business,2025-06-21,Sindh,44.0
+C0177,Customer 0177,Lahore,Consumer,2025-05-21,Punjab,46.0
+C0178,Customer 0178,Multan,Consumer,2025-08-23,Punjab,31.0
+C0179,Customer 0179,Multan,Corporate,2026-05-20,Punjab,28.0
+C0180,Customer 0180,Rawalpindi,Small Business,2025-10-23,Punjab,25.0
+C0181,Customer 0181,Multan,Consumer,2025-07-19,Punjab,28.0
+C0182,Customer 0182,Multan,Small Business,2025-08-29,Punjab,27.0
+C0183,Customer 0183,Lahore,Consumer,2025-06-01,Punjab,53.0
+C0184,Customer 0184,Karachi,Consumer,2025-12-09,Sindh,20.0
+C0185,Customer 0185,Rawalpindi,Small Business,2025-07-02,Punjab,47.0
+C0186,Customer 0186,Islamabad,Consumer,2025-10-16,ICT,62.0
+C0187,Customer 0187,Lahore,Corporate,2025-07-12,Punjab,53.0
+C0188,Customer 0188,Karachi,Consumer,2025-06-16,Sindh,
+C0189,Customer 0189,Rawalpindi,Corporate,2026-05-20,Punjab,20.0
+C0190,Customer 0190,Karachi,Consumer,2025-06-29,Sindh,57.0
+C0191,Customer 0191,Multan,Consumer,2025-02-06,Punjab,18.0
+C0192,Customer 0192,Karachi,Consumer,2025-07-16,Sindh,50.0
+C0193,Customer 0193,Karachi,Consumer,2025-10-04,Sindh,49.0
+C0194,Customer 0194,Peshawar,Consumer,2025-02-19,KPK,27.0
+C0195,Customer 0195,Karachi,Consumer,2025-06-08,Sindh,
+C0196,Customer 0196,Karachi,Consumer,2025-03-28,Sindh,26.0
+C0197,Customer 0197,Islamabad,Consumer,2025-09-18,ICT,28.0
+C0198,Customer 0198,Peshawar,Consumer,2026-01-12,KPK,56.0
+C0199,Customer 0199,Karachi,Corporate,2026-05-19,Sindh,64.0
+C0200,Customer 0200,Karachi,Corporate,2025-07-22,Sindh,30.0
+C0201,Customer 0201,Rawalpindi,Corporate,2026-03-25,Punjab,61.0
+C0202,Customer 0202,Multan,Consumer,2025-04-22,Punjab,60.0
+C0203,Customer 0203,Lahore,Small Business,2026-02-10,Punjab,54.0
+C0204,Customer 0204,Karachi,Consumer,2025-10-20,Sindh,24.0
+C0205,Customer 0205,Karachi,Consumer,2026-01-30,Sindh,32.0
+C0206,Customer 0206,Karachi,Consumer,2026-01-28,Sindh,49.0
+C0207,Customer 0207,Karachi,Corporate,2025-10-04,Sindh,64.0
+C0208,Customer 0208,Islamabad,Consumer,2025-05-14,ICT,56.0
+C0209,Customer 0209,Karachi,Consumer,2025-10-01,Sindh,37.0
+C0210,Customer 0210,Lahore,Small Business,2026-03-06,Punjab,29.0
+C0211,Customer 0211,Rawalpindi,Consumer,2026-05-20,Punjab,63.0
+C0212,Customer 0212,Islamabad,Consumer,2026-04-28,ICT,30.0
+C0213,Customer 0213,Karachi,Small Business,2025-04-05,Sindh,34.0
+C0214,Customer 0214,Peshawar,Consumer,2025-11-07,KPK,63.0
+C0215,Customer 0215,Rawalpindi,Consumer,2025-02-24,Punjab,44.0
+C0216,Customer 0216,Rawalpindi,Small Business,2025-12-14,Punjab,30.0
+C0217,Customer 0217,Karachi,Small Business,2026-06-01,Sindh,18.0
+C0218,Customer 0218,Karachi,Consumer,2025-01-28,Sindh,38.0
+C0219,Customer 0219,Multan,Corporate,2025-12-08,Punjab,64.0
+C0220,Customer 0220,,Consumer,2026-05-07,Punjab,38.0
+C0221,Customer 0221,Karachi,Consumer,2026-03-17,Sindh,50.0
+C0222,Customer 0222,Lahore,Consumer,2025-07-24,Punjab,29.0
+C0223,Customer 0223,Islamabad,Consumer,2025-02-24,ICT,54.0
+C0224,Customer 0224,Multan,Corporate,2026-04-26,Punjab,54.0
+C0225,Customer 0225,Karachi,Small Business,2026-04-25,Sindh,46.0
+C0226,Customer 0226,Multan,Consumer,2025-10-29,Punjab,54.0
+C0227,Customer 0227,Karachi,Consumer,2026-05-25,Sindh,45.0
+C0228,Customer 0228,Lahore,Consumer,2025-01-03,Punjab,35.0
+C0229,Customer 0229,Islamabad,Small Business,2025-11-17,ICT,52.0
+C0230,Customer 0230,Karachi,Consumer,2025-01-21,Sindh,57.0
+C0231,Customer 0231,Karachi,Consumer,2026-05-02,Sindh,57.0
+C0232,Customer 0232,Lahore,Consumer,2025-12-20,Punjab,28.0
+C0233,Customer 0233,Multan,Consumer,2026-04-20,Punjab,49.0
+C0234,Customer 0234,Islamabad,Corporate,2025-10-20,ICT,18.0
+C0235,Customer 0235,Multan,Corporate,2025-02-13,Punjab,44.0
+C0236,Customer 0236,Peshawar,Consumer,2025-01-14,KPK,44.0
+C0237,Customer 0237,Lahore,Corporate,2025-06-24,Punjab,35.0
+C0238,Customer 0238,Rawalpindi,Small Business,2026-01-22,Punjab,64.0
+C0239,Customer 0239,Karachi,Consumer,2025-03-20,Sindh,
+C0240,Customer 0240,Karachi,Consumer,2026-03-20,Sindh,19.0
+C0241,Customer 0241,Peshawar,Consumer,2025-05-05,KPK,27.0
+C0242,Customer 0242,Peshawar,Corporate,2025-09-16,KPK,27.0
+C0243,Customer 0243,Karachi,Consumer,2025-04-16,Sindh,60.0
+C0244,Customer 0244,Lahore,Consumer,2025-08-31,Punjab,42.0
+C0245,Customer 0245,Islamabad,Consumer,2025-08-24,ICT,52.0
+C0246,Customer 0246,Peshawar,Small Business,2025-01-03,KPK,56.0
+C0247,Customer 0247,Islamabad,Consumer,2025-10-23,ICT,54.0
+C0248,Customer 0248,Lahore,Corporate,2026-02-14,Punjab,22.0
+C0249,Customer 0249,Lahore,Consumer,2026-05-02,Punjab,24.0
+C0250,Customer 0250,Lahore,Small Business,2025-06-21,Punjab,36.0
+C0251,Customer 0251,Islamabad,Consumer,2026-04-03,ICT,33.0
+C0252,Customer 0252,Peshawar,Consumer,2026-04-02,KPK,53.0
+C0253,Customer 0253,Lahore,Small Business,2026-05-29,Punjab,
+C0254,Customer 0254,Karachi,Small Business,2025-07-13,Sindh,35.0
+C0255,Customer 0255,Karachi,Consumer,2026-03-19,Sindh,
+C0256,Customer 0256,Rawalpindi,Consumer,2025-10-21,Punjab,26.0
+C0257,Customer 0257,Peshawar,Corporate,2025-01-31,KPK,26.0
+C0258,Customer 0258,Karachi,Small Business,2025-05-21,Sindh,27.0
+C0259,Customer 0259,,Consumer,2025-12-16,Sindh,44.0
+C0260,Customer 0260,Islamabad,Consumer,2025-03-25,ICT,
+C0261,Customer 0261,Karachi,Corporate,2025-08-15,Sindh,38.0
+C0262,Customer 0262,Peshawar,Corporate,2026-02-07,KPK,40.0
+C0263,Customer 0263,Karachi,Corporate,2025-03-19,Sindh,52.0
+C0264,Customer 0264,Karachi,Consumer,2025-09-16,Sindh,58.0
+C0265,Customer 0265,Multan,Consumer,2025-04-22,Punjab,42.0
+C0266,Customer 0266,Karachi,Small Business,2025-10-06,Sindh,48.0
+C0267,Customer 0267,Karachi,Small Business,2025-05-06,Sindh,52.0
+C0268,Customer 0268,Karachi,Corporate,2026-05-18,Sindh,50.0
+C0269,Customer 0269,Karachi,Consumer,2025-02-09,Sindh,24.0
+C0270,Customer 0270,Karachi,Consumer,2026-05-17,Sindh,64.0
+C0271,Customer 0271,Karachi,Corporate,2026-02-16,Sindh,25.0
+C0272,Customer 0272,Karachi,Consumer,2026-03-21,Sindh,37.0
+C0273,Customer 0273,Karachi,Small Business,2026-03-19,Sindh,48.0
+C0274,Customer 0274,Islamabad,Consumer,2025-04-08,ICT,36.0
+C0275,Customer 0275,Islamabad,Corporate,2026-04-30,ICT,29.0
+C0276,Customer 0276,Lahore,Small Business,2025-11-06,Punjab,61.0
+C0277,Customer 0277,Karachi,Consumer,2026-05-16,Sindh,
+C0278,Customer 0278,Lahore,Consumer,2026-04-02,Punjab,29.0
+C0279,Customer 0279,Peshawar,Consumer,2025-10-29,KPK,64.0
+C0280,Customer 0280,Peshawar,Consumer,2025-07-14,KPK,52.0
+C0281,Customer 0281,Karachi,Consumer,2025-03-02,Sindh,22.0
+C0282,Customer 0282,Karachi,Consumer,2025-02-22,Sindh,53.0
+C0283,Customer 0283,Karachi,Small Business,2025-07-22,Sindh,63.0
+C0284,Customer 0284,Karachi,Consumer,2026-02-26,Sindh,22.0
+C0285,Customer 0285,Islamabad,Consumer,2025-09-20,ICT,37.0
+C0286,Customer 0286,Lahore,Consumer,2025-09-08,Punjab,40.0
+C0287,Customer 0287,Karachi,Consumer,2025-05-08,Sindh,24.0
+C0288,Customer 0288,Lahore,Consumer,2025-10-21,Punjab,27.0
+C0289,Customer 0289,Lahore,Consumer,2025-11-28,Punjab,26.0
+C0290,Customer 0290,Karachi,Corporate,2026-05-26,Sindh,26.0
+C0291,Customer 0291,Peshawar,Consumer,2026-01-15,KPK,36.0
+C0292,Customer 0292,Karachi,Small Business,2025-11-12,Sindh,39.0
+C0293,Customer 0293,Multan,Consumer,2026-04-19,Punjab,29.0
+C0294,Customer 0294,Karachi,Consumer,2025-08-09,Sindh,31.0
+C0295,Customer 0295,Peshawar,Corporate,2026-05-02,KPK,27.0
+C0296,Customer 0296,Multan,Small Business,2025-07-12,Punjab,55.0
+C0297,Customer 0297,Multan,Consumer,2025-03-08,Punjab,27.0
+C0298,Customer 0298,Peshawar,Consumer,2025-08-06,KPK,60.0
+C0299,Customer 0299,Rawalpindi,Consumer,2025-03-08,Punjab,43.0
+C0300,Customer 0300,Islamabad,Consumer,2025-03-03,ICT,55.0
+C0301,Customer 0301,Rawalpindi,Consumer,2026-04-04,Punjab,47.0
+C0302,Customer 0302,Karachi,Consumer,2026-02-18,Sindh,30.0
+C0303,Customer 0303,Lahore,Consumer,2025-04-26,Punjab,46.0
+C0304,Customer 0304,Lahore,Consumer,2026-03-12,Punjab,30.0
+C0305,Customer 0305,Peshawar,Small Business,2025-02-05,KPK,23.0
+C0306,Customer 0306,Lahore,Corporate,2025-05-28,Punjab,29.0
+C0307,Customer 0307,Lahore,Consumer,2026-01-03,Punjab,30.0
+C0308,Customer 0308,Islamabad,Consumer,2025-06-07,ICT,24.0
+C0309,Customer 0309,Karachi,Consumer,2026-01-15,Sindh,19.0
+C0310,Customer 0310,Karachi,Consumer,2026-03-31,Sindh,62.0
+C0311,Customer 0311,Lahore,Corporate,2025-02-04,Punjab,42.0
+C0312,Customer 0312,Lahore,Small Business,2025-01-13,Punjab,36.0
+C0313,Customer 0313,Karachi,Small Business,2026-05-04,Sindh,61.0
+C0314,Customer 0314,Lahore,Small Business,2025-09-28,Punjab,28.0
+C0315,Customer 0315,Lahore,Small Business,2025-09-21,Punjab,36.0
+C0316,Customer 0316,Karachi,Small Business,2025-08-30,Sindh,57.0
+C0317,Customer 0317,Lahore,Consumer,2025-08-14,Punjab,47.0
+C0318,Customer 0318,Islamabad,Consumer,2025-12-25,ICT,36.0
+C0319,Customer 0319,Karachi,Consumer,2025-10-29,Sindh,30.0
+C0320,Customer 0320,Multan,Consumer,2025-03-26,Punjab,19.0
+C0321,Customer 0321,Multan,Consumer,2025-11-22,Punjab,21.0
+C0322,Customer 0322,Lahore,Small Business,2025-12-14,Punjab,25.0
+C0323,Customer 0323,Karachi,Consumer,2025-03-01,Sindh,
+C0324,Customer 0324,Lahore,Consumer,2025-07-15,Punjab,48.0
+C0325,Customer 0325,Peshawar,Consumer,2026-02-16,KPK,38.0
+C0326,Customer 0326,Islamabad,Consumer,2025-11-18,ICT,
+C0327,Customer 0327,Peshawar,Consumer,2025-03-12,KPK,25.0
+C0328,Customer 0328,Lahore,Small Business,2025-01-21,Punjab,27.0
+C0329,Customer 0329,Islamabad,Consumer,2025-10-30,ICT,36.0
+C0330,Customer 0330,Karachi,Corporate,2025-08-29,Sindh,61.0
+C0331,Customer 0331,Rawalpindi,Consumer,2026-05-15,Punjab,46.0
+C0332,Customer 0332,Karachi,Consumer,2025-09-29,Sindh,57.0
+C0333,Customer 0333,Rawalpindi,Consumer,2026-04-30,Punjab,29.0
+C0334,Customer 0334,Peshawar,Corporate,2025-04-22,KPK,57.0
+C0335,Customer 0335,Karachi,Corporate,2025-08-21,Sindh,21.0
+C0336,Customer 0336,Islamabad,Consumer,2025-03-14,ICT,28.0
+C0337,Customer 0337,Karachi,Small Business,2025-10-26,Sindh,42.0
+C0338,Customer 0338,Rawalpindi,Consumer,2025-04-09,Punjab,20.0
+C0339,Customer 0339,Karachi,Small Business,2025-09-13,Sindh,58.0
+C0340,Customer 0340,Multan,Consumer,2025-06-28,Punjab,58.0
+C0341,Customer 0341,Karachi,Consumer,2025-04-07,Sindh,43.0
+C0342,Customer 0342,Multan,Small Business,2025-02-20,Punjab,32.0
+C0343,Customer 0343,Peshawar,Consumer,2025-09-24,KPK,22.0
+C0344,Customer 0344,Islamabad,Consumer,2026-05-08,ICT,47.0
+C0345,Customer 0345,Rawalpindi,Consumer,2025-04-14,Punjab,43.0
+C0346,Customer 0346,Peshawar,Consumer,2025-07-30,KPK,53.0
+C0347,Customer 0347,Multan,Corporate,2025-04-27,Punjab,
+C0348,Customer 0348,Karachi,Small Business,2026-02-25,Sindh,24.0
+C0349,Customer 0349,Islamabad,Small Business,2025-08-04,ICT,23.0
+C0350,Customer 0350,,Consumer,2026-05-22,Sindh,54.0
+C0351,Customer 0351,Islamabad,Consumer,2025-05-08,ICT,25.0
+C0352,Customer 0352,Karachi,Consumer,2025-02-11,Sindh,62.0
+C0353,Customer 0353,Lahore,Consumer,2025-10-30,Punjab,
+C0354,Customer 0354,Islamabad,Consumer,2025-12-05,ICT,52.0
+C0355,Customer 0355,Lahore,Small Business,2026-05-31,Punjab,
+C0356,Customer 0356,Lahore,Small Business,2026-03-30,Punjab,38.0
+C0357,Customer 0357,Rawalpindi,Corporate,2026-04-05,Punjab,20.0
+C0358,Customer 0358,Peshawar,Consumer,2025-11-26,KPK,59.0
+C0359,Customer 0359,Lahore,Consumer,2025-07-07,Punjab,26.0
+C0360,Customer 0360,Islamabad,Consumer,2025-08-12,ICT,42.0
+C0361,Customer 0361,Multan,Consumer,2025-03-11,Punjab,64.0
+C0362,Customer 0362,Karachi,Consumer,2025-08-13,Sindh,53.0
+C0363,Customer 0363,Karachi,Consumer,2025-07-09,Sindh,20.0
+C0364,Customer 0364,Karachi,Consumer,2025-01-19,Sindh,56.0
+C0365,Customer 0365,Islamabad,Small Business,2025-04-17,ICT,25.0
+C0366,Customer 0366,Lahore,Consumer,2025-10-05,Punjab,53.0
+C0367,Customer 0367,Rawalpindi,Small Business,2025-07-12,Punjab,47.0
+C0368,Customer 0368,Islamabad,Consumer,2026-06-01,ICT,31.0
+C0369,Customer 0369,Karachi,Consumer,2025-09-06,Sindh,37.0
+C0370,Customer 0370,Multan,Consumer,2026-05-14,Punjab,23.0
+C0371,Customer 0371,Rawalpindi,Consumer,2025-12-10,Punjab,64.0
+C0372,Customer 0372,Karachi,Consumer,2025-01-22,Sindh,29.0
+C0373,Customer 0373,Lahore,Consumer,2025-04-16,Punjab,32.0
+C0374,Customer 0374,Karachi,Small Business,2026-01-03,Sindh,41.0
+C0375,Customer 0375,Karachi,Consumer,2025-10-11,Sindh,49.0
+C0376,Customer 0376,Karachi,Consumer,2025-06-06,Sindh,41.0
+C0377,Customer 0377,Multan,Consumer,2025-09-29,Punjab,41.0
+C0378,Customer 0378,Lahore,Consumer,2026-04-15,Punjab,45.0
+C0379,Customer 0379,Lahore,Consumer,2025-07-22,Punjab,58.0
+C0380,Customer 0380,Rawalpindi,Consumer,2025-01-24,Punjab,36.0
+C0381,Customer 0381,Lahore,Small Business,2025-06-11,Punjab,57.0
+C0382,Customer 0382,Multan,Corporate,2026-05-02,Punjab,54.0
+C0383,Customer 0383,Rawalpindi,Corporate,2026-02-01,Punjab,63.0
+C0384,Customer 0384,Lahore,Consumer,2026-03-12,Punjab,60.0
+C0385,Customer 0385,Lahore,Consumer,2026-04-20,Punjab,55.0
+C0386,Customer 0386,Multan,Small Business,2025-03-03,Punjab,29.0
+C0387,Customer 0387,,Consumer,2025-05-27,Punjab,54.0
+C0388,Customer 0388,Multan,Consumer,2025-02-01,Punjab,
+C0389,Customer 0389,Karachi,Consumer,2025-01-03,Sindh,31.0
+C0390,Customer 0390,Peshawar,Corporate,2026-03-11,KPK,49.0
+C0391,Customer 0391,Islamabad,Corporate,2026-05-03,ICT,29.0
+C0392,Customer 0392,Karachi,Corporate,2025-03-22,Sindh,42.0
+C0393,Customer 0393,Islamabad,Corporate,2026-01-11,ICT,55.0
+C0394,Customer 0394,Islamabad,Consumer,2025-10-06,ICT,
+C0395,Customer 0395,Karachi,Small Business,2025-02-05,Sindh,33.0
+C0396,Customer 0396,Lahore,Consumer,2026-04-22,Punjab,55.0
+C0397,Customer 0397,Peshawar,Corporate,2026-03-30,KPK,39.0
+C0398,Customer 0398,Karachi,Consumer,2025-10-23,Sindh,
+C0399,Customer 0399,Lahore,Small Business,2026-01-04,Punjab,18.0
+C0400,Customer 0400,Lahore,Consumer,2025-07-26,Punjab,51.0
+C0401,Customer 0401,Karachi,Consumer,2026-02-17,Sindh,56.0
+C0402,Customer 0402,Multan,Consumer,2025-08-20,Punjab,61.0
+C0403,Customer 0403,Rawalpindi,Consumer,2026-05-30,Punjab,25.0
+C0404,Customer 0404,Karachi,Consumer,2025-02-02,Sindh,64.0
+C0405,Customer 0405,Multan,Corporate,2025-03-31,Punjab,36.0
+C0406,Customer 0406,Peshawar,Consumer,2026-05-19,KPK,34.0
+C0407,Customer 0407,Karachi,Small Business,2025-05-31,Sindh,34.0
+C0408,Customer 0408,Peshawar,Consumer,2025-06-11,KPK,47.0
+C0409,Customer 0409,Karachi,Corporate,2026-02-16,Sindh,48.0
+C0410,Customer 0410,Multan,Consumer,2025-04-09,Punjab,40.0
+C0411,Customer 0411,Islamabad,Corporate,2025-09-25,ICT,21.0
+C0412,Customer 0412,Islamabad,Consumer,2025-05-29,ICT,64.0
+C0413,Customer 0413,Karachi,Consumer,2025-04-13,Sindh,28.0
+C0414,Customer 0414,Multan,Small Business,2026-05-17,Punjab,22.0
+C0415,Customer 0415,Karachi,Consumer,2025-04-14,Sindh,46.0
+C0416,Customer 0416,Karachi,Consumer,2025-02-19,Sindh,37.0
+C0417,Customer 0417,Karachi,Corporate,2025-12-17,Sindh,46.0
+C0418,Customer 0418,Rawalpindi,Small Business,2026-03-27,Punjab,59.0
+C0419,Customer 0419,Karachi,Consumer,2025-03-08,Sindh,22.0
+C0420,Customer 0420,Multan,Consumer,2026-01-04,Punjab,31.0
+C0421,Customer 0421,Islamabad,Small Business,2025-10-09,ICT,42.0
+C0422,Customer 0422,Karachi,Corporate,2026-03-08,Sindh,55.0
+C0423,Customer 0423,Karachi,Small Business,2025-03-08,Sindh,46.0
+C0424,Customer 0424,Karachi,Consumer,2026-05-23,Sindh,35.0
+C0425,Customer 0425,Islamabad,Corporate,2025-11-18,ICT,46.0
+C0426,Customer 0426,Peshawar,Consumer,2026-03-14,KPK,64.0
+C0427,Customer 0427,Karachi,Small Business,2025-07-08,Sindh,40.0
+C0428,Customer 0428,Peshawar,Consumer,2026-05-06,KPK,59.0
+C0429,Customer 0429,Karachi,Corporate,2025-11-22,Sindh,54.0
+C0430,Customer 0430,Peshawar,Consumer,2025-03-08,KPK,32.0
+C0431,Customer 0431,Multan,Consumer,2026-04-25,Punjab,29.0
+C0432,Customer 0432,Rawalpindi,Corporate,2026-02-18,Punjab,54.0
+C0433,Customer 0433,Rawalpindi,Consumer,2025-06-06,Punjab,27.0
+C0434,Customer 0434,Peshawar,Small Business,2025-10-11,KPK,33.0
+C0435,Customer 0435,Karachi,Consumer,2025-07-21,Sindh,29.0
+C0436,Customer 0436,Karachi,Corporate,2025-10-10,Sindh,
+C0437,Customer 0437,Karachi,Consumer,2026-05-17,Sindh,31.0
+C0438,Customer 0438,Lahore,Consumer,2026-04-13,Punjab,48.0
+C0439,Customer 0439,Rawalpindi,Consumer,2025-04-23,Punjab,61.0
+C0440,Customer 0440,Islamabad,Consumer,2026-05-21,ICT,
+C0441,Customer 0441,Peshawar,Consumer,2025-08-16,KPK,62.0
+C0442,Customer 0442,Karachi,Corporate,2026-01-02,Sindh,19.0
+C0443,Customer 0443,Rawalpindi,Corporate,2026-02-02,Punjab,39.0
+C0444,Customer 0444,Karachi,Corporate,2025-09-09,Sindh,28.0
+C0445,Customer 0445,Karachi,Consumer,2025-08-26,Sindh,61.0
+C0446,Customer 0446,Rawalpindi,Consumer,2025-08-26,Punjab,51.0
+C0447,Customer 0447,Multan,Consumer,2026-03-25,Punjab,33.0
+C0448,Customer 0448,Islamabad,Corporate,2025-07-20,ICT,44.0
+C0449,Customer 0449,Karachi,Small Business,2025-05-26,Sindh,46.0
+C0450,Customer 0450,Islamabad,Consumer,2025-07-08,ICT,41.0
+C0451,Customer 0451,Karachi,Corporate,2025-04-12,Sindh,40.0
+C0452,Customer 0452,Multan,Consumer,2025-07-23,Punjab,20.0
+C0453,Customer 0453,Rawalpindi,Consumer,2025-03-01,Punjab,39.0
+C0454,Customer 0454,Karachi,Consumer,2025-02-16,Sindh,34.0
+C0455,Customer 0455,Karachi,Consumer,2026-01-12,Sindh,56.0
+C0456,Customer 0456,Karachi,Corporate,2025-02-10,Sindh,
+C0457,Customer 0457,Multan,Small Business,2025-10-23,Punjab,
+C0458,Customer 0458,Lahore,Consumer,2026-02-10,Punjab,19.0
+C0459,Customer 0459,Rawalpindi,Consumer,2026-01-12,Punjab,57.0
+C0460,Customer 0460,Islamabad,Corporate,2025-08-20,ICT,36.0
+C0461,Customer 0461,Islamabad,Small Business,2025-04-11,ICT,37.0
+C0462,Customer 0462,Karachi,Consumer,2026-04-29,Sindh,62.0
+C0463,Customer 0463,Multan,Consumer,2026-03-11,Punjab,58.0
+C0464,Customer 0464,Karachi,Corporate,2025-11-15,Sindh,20.0
+C0465,Customer 0465,Islamabad,Consumer,2025-02-15,ICT,34.0
+C0466,Customer 0466,Rawalpindi,Small Business,2025-01-19,Punjab,53.0
+C0467,Customer 0467,Islamabad,Consumer,2025-06-13,ICT,43.0
+C0468,Customer 0468,Multan,Corporate,2025-03-23,Punjab,30.0
+C0469,Customer 0469,Karachi,Consumer,2026-03-24,Sindh,42.0
+C0470,Customer 0470,Lahore,Consumer,2025-04-18,Punjab,58.0
+C0471,Customer 0471,Lahore,Small Business,2025-05-27,Punjab,28.0
+C0472,Customer 0472,Lahore,Consumer,2026-05-23,Punjab,53.0
+C0473,Customer 0473,Karachi,Consumer,2026-03-02,Sindh,52.0
+C0474,Customer 0474,Karachi,Small Business,2025-04-24,Sindh,59.0
+C0475,Customer 0475,Karachi,Small Business,2025-07-19,Sindh,32.0
+C0476,Customer 0476,Karachi,Consumer,2025-09-26,Sindh,28.0
+C0477,Customer 0477,Lahore,Consumer,2025-12-12,Punjab,43.0
+C0478,Customer 0478,Islamabad,Consumer,2026-05-02,ICT,42.0
+C0479,Customer 0479,Islamabad,Corporate,2026-03-29,ICT,37.0
+C0480,Customer 0480,Lahore,Consumer,2026-05-24,Punjab,54.0
+C0481,Customer 0481,Lahore,Consumer,2025-01-22,Punjab,55.0
+C0482,Customer 0482,Karachi,Small Business,2025-05-03,Sindh,29.0
+C0483,Customer 0483,Islamabad,Small Business,2025-10-20,ICT,55.0
+C0484,Customer 0484,Karachi,Small Business,2025-01-26,Sindh,28.0
+C0485,Customer 0485,Karachi,Small Business,2025-07-04,Sindh,37.0
+C0486,Customer 0486,Lahore,Corporate,2025-03-21,Punjab,19.0
+C0487,Customer 0487,Lahore,Corporate,2026-05-01,Punjab,33.0
+C0488,Customer 0488,Karachi,Corporate,2025-02-02,Sindh,63.0
+C0489,Customer 0489,Islamabad,Consumer,2025-03-19,ICT,38.0
+C0490,Customer 0490,Lahore,Consumer,2025-04-12,Punjab,51.0
+C0491,Customer 0491,Rawalpindi,Consumer,2025-03-19,Punjab,23.0
+C0492,Customer 0492,Islamabad,Corporate,2025-10-23,ICT,
+C0493,Customer 0493,Islamabad,Consumer,2025-07-09,ICT,35.0
+C0494,Customer 0494,Karachi,Consumer,2026-04-20,Sindh,
+C0495,Customer 0495,Rawalpindi,Consumer,2025-05-16,Punjab,61.0
+C0496,Customer 0496,Lahore,Consumer,2025-10-07,Punjab,42.0
+C0497,Customer 0497,Lahore,Consumer,2025-12-10,Punjab,22.0
+C0498,Customer 0498,Islamabad,Corporate,2025-11-22,ICT,40.0
+C0499,Customer 0499,Lahore,Small Business,2026-02-19,Punjab,23.0
+C0500,Customer 0500,Lahore,Consumer,2025-04-15,Punjab,39.0
+C0501,Customer 0501,Rawalpindi,Consumer,2025-09-21,Punjab,20.0
+C0502,Customer 0502,Multan,Consumer,2026-02-21,Punjab,48.0
+C0503,Customer 0503,Multan,Corporate,2026-03-25,Punjab,
+C0504,Customer 0504,Lahore,Small Business,2025-11-18,Punjab,27.0
+C0505,Customer 0505,Lahore,Consumer,2025-12-05,Punjab,18.0
+C0506,Customer 0506,Peshawar,Corporate,2026-03-26,KPK,59.0
+C0507,Customer 0507,Karachi,Consumer,2025-11-21,Sindh,57.0
+C0508,Customer 0508,Peshawar,Consumer,2026-05-09,KPK,56.0
+C0509,Customer 0509,Lahore,Small Business,2025-03-08,Punjab,20.0
+C0510,Customer 0510,Karachi,Consumer,2025-06-30,Sindh,34.0
+C0511,Customer 0511,Karachi,Consumer,2025-02-28,Sindh,63.0
+C0512,Customer 0512,Peshawar,Consumer,2025-02-17,KPK,45.0
+C0513,Customer 0513,Karachi,Consumer,2025-09-03,Sindh,24.0
+C0514,Customer 0514,Karachi,Small Business,2025-04-28,Sindh,24.0
+C0515,Customer 0515,Karachi,Small Business,2025-07-31,Sindh,30.0
+C0516,Customer 0516,Karachi,Consumer,2025-08-16,Sindh,63.0
+C0517,Customer 0517,Karachi,Consumer,2025-11-19,Sindh,25.0
+C0518,Customer 0518,Rawalpindi,Corporate,2026-05-07,Punjab,60.0
+C0519,Customer 0519,Karachi,Consumer,2026-03-18,Sindh,49.0
+C0520,Customer 0520,Peshawar,Small Business,2025-07-16,KPK,61.0
+C0521,Customer 0521,Peshawar,Corporate,2025-06-19,KPK,56.0
+C0522,Customer 0522,Lahore,Consumer,2026-02-05,Punjab,33.0
+C0523,Customer 0523,Karachi,Small Business,2025-03-06,Sindh,56.0
+C0524,Customer 0524,Islamabad,Consumer,2025-10-09,ICT,25.0
+C0525,Customer 0525,Karachi,Consumer,2025-08-08,Sindh,31.0
+C0526,Customer 0526,Lahore,Consumer,2025-04-06,Punjab,27.0
+C0527,Customer 0527,Multan,Consumer,2025-11-17,Punjab,24.0
+C0528,Customer 0528,Multan,Corporate,2025-06-16,Punjab,
+C0529,Customer 0529,Rawalpindi,Corporate,2025-04-07,Punjab,26.0
+C0530,Customer 0530,Karachi,Small Business,2025-12-06,Sindh,23.0
+C0531,Customer 0531,Islamabad,Small Business,2025-04-01,ICT,35.0
+C0532,Customer 0532,Rawalpindi,Consumer,2025-12-16,Punjab,21.0
+C0533,Customer 0533,Lahore,Consumer,2025-03-26,Punjab,20.0
+C0534,Customer 0534,Islamabad,Corporate,2025-08-15,ICT,64.0
+C0535,Customer 0535,Karachi,Small Business,2026-02-25,Sindh,22.0
+C0536,Customer 0536,Karachi,Consumer,2025-04-29,Sindh,21.0
+C0537,Customer 0537,Lahore,Consumer,2026-02-04,Punjab,19.0
+C0538,Customer 0538,Karachi,Consumer,2026-01-11,Sindh,24.0
+C0539,Customer 0539,Karachi,Consumer,2026-04-15,Sindh,42.0
+C0540,Customer 0540,Peshawar,Corporate,2025-03-29,KPK,56.0
+C0541,Customer 0541,Multan,Consumer,2026-01-07,Punjab,52.0
+C0542,Customer 0542,Lahore,Corporate,2026-05-03,Punjab,45.0
+C0543,Customer 0543,Peshawar,Small Business,2026-02-01,KPK,21.0
+C0544,Customer 0544,Multan,Small Business,2025-04-08,Punjab,54.0
+C0545,Customer 0545,Karachi,Consumer,2026-03-04,Sindh,19.0
+C0546,Customer 0546,Lahore,Consumer,2025-02-25,Punjab,47.0
+C0547,Customer 0547,Lahore,Corporate,2025-11-03,Punjab,37.0
+C0548,Customer 0548,Karachi,Corporate,2025-09-16,Sindh,59.0
+C0549,Customer 0549,Rawalpindi,Consumer,2025-10-04,Punjab,32.0
+C0550,Customer 0550,Lahore,Small Business,2025-09-28,Punjab,48.0
+C0551,Customer 0551,Lahore,Consumer,2025-01-17,Punjab,38.0
+C0552,Customer 0552,Karachi,Small Business,2025-09-22,Sindh,42.0
+C0553,Customer 0553,Karachi,Consumer,2026-05-03,Sindh,62.0
+C0554,Customer 0554,Multan,Consumer,2025-08-16,Punjab,51.0
+C0555,Customer 0555,Karachi,Consumer,2025-05-24,Sindh,37.0
+C0556,Customer 0556,Karachi,Consumer,2026-06-02,Sindh,39.0
+C0557,Customer 0557,Karachi,Consumer,2025-02-21,Sindh,51.0
+C0558,Customer 0558,Lahore,Consumer,2025-09-10,Punjab,34.0
+C0559,Customer 0559,Islamabad,Consumer,2025-09-24,ICT,25.0
+C0560,Customer 0560,Lahore,Corporate,2025-09-06,Punjab,39.0
+C0561,Customer 0561,Karachi,Consumer,2026-04-25,Sindh,21.0
+C0562,Customer 0562,Karachi,Corporate,2025-08-08,Sindh,25.0
+C0563,Customer 0563,Peshawar,Small Business,2026-05-22,KPK,37.0
+C0564,Customer 0564,Islamabad,Consumer,2025-02-04,ICT,55.0
+C0565,Customer 0565,Islamabad,Consumer,2026-01-17,ICT,54.0
+C0566,Customer 0566,Islamabad,Small Business,2025-11-05,ICT,30.0
+C0567,Customer 0567,Rawalpindi,Small Business,2025-05-06,Punjab,37.0
+C0568,Customer 0568,Karachi,Consumer,2025-04-29,Sindh,25.0
+C0569,Customer 0569,Lahore,Corporate,2026-01-10,Punjab,53.0
+C0570,Customer 0570,Lahore,Consumer,2025-11-28,Punjab,29.0
+C0571,Customer 0571,Karachi,Consumer,2025-11-14,Sindh,55.0
+C0572,Customer 0572,Peshawar,Corporate,2025-01-27,KPK,57.0
+C0573,Customer 0573,Lahore,Consumer,2025-11-07,Punjab,50.0
+C0574,Customer 0574,Rawalpindi,Corporate,2026-05-26,Punjab,
+C0575,Customer 0575,Peshawar,Consumer,2025-01-10,KPK,62.0
+C0576,Customer 0576,Lahore,Corporate,2025-09-01,Punjab,50.0
+C0577,Customer 0577,Multan,Consumer,2025-09-15,Punjab,
+C0578,Customer 0578,Islamabad,Consumer,2026-04-12,ICT,58.0
+C0579,Customer 0579,Peshawar,Consumer,2025-05-28,KPK,59.0
+C0580,Customer 0580,Karachi,Consumer,2025-09-05,Sindh,21.0
+C0581,Customer 0581,Lahore,Corporate,2026-01-08,Punjab,59.0
+C0582,Customer 0582,Lahore,Consumer,2025-02-01,Punjab,53.0
+C0583,Customer 0583,Karachi,Consumer,2026-02-21,Sindh,27.0
+C0584,Customer 0584,Lahore,Consumer,2026-03-04,Punjab,
+C0585,Customer 0585,Multan,Consumer,2026-01-10,Punjab,53.0
+C0586,Customer 0586,Islamabad,Small Business,2025-12-04,ICT,28.0
+C0587,Customer 0587,Karachi,Consumer,2026-01-24,Sindh,39.0
+C0588,Customer 0588,Karachi,Small Business,2026-02-11,Sindh,50.0
+C0589,Customer 0589,Karachi,Consumer,2026-04-15,Sindh,
+C0590,Customer 0590,Karachi,Corporate,2025-08-11,Sindh,60.0
+C0591,Customer 0591,Multan,Consumer,2025-08-26,Punjab,23.0
+C0592,Customer 0592,Lahore,Consumer,2025-11-28,Punjab,31.0
+C0593,Customer 0593,Karachi,Small Business,2025-04-11,Sindh,64.0
+C0594,Customer 0594,Islamabad,Small Business,2026-03-22,ICT,44.0
+C0595,Customer 0595,Karachi,Small Business,2026-02-05,Sindh,29.0
+C0596,Customer 0596,Karachi,Consumer,2025-11-25,Sindh,31.0
+C0597,Customer 0597,Rawalpindi,Consumer,2025-06-06,Punjab,33.0
+C0598,Customer 0598,Islamabad,Corporate,2025-06-30,ICT,44.0
+C0599,Customer 0599,Multan,Consumer,2025-08-15,Punjab,31.0
+C0600,Customer 0600,Islamabad,Corporate,2025-12-11,ICT,47.0
