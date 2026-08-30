@@ -1,14 +1,23 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from a .env file
-# Try multiple possible .env locations
 from pathlib import Path
-_base = Path(__file__).parent
-for _p in [_base/'.env', _base/'..'/'.env', _base/'../..'/'.env', Path('.env'), Path('/home/hitin/AURA/.env')]:
-    if _p.exists():
-        load_dotenv(_p)
+
+# Search for .env file starting from this file's location upward
+_current = Path(__file__).parent
+_env_loaded = False
+
+for _levels in range(4):
+    _env_path = _current / '.env'
+    if _env_path.exists():
+        load_dotenv(_env_path)
+        _env_loaded = True
         break
+    _current = _current.parent
+
+# Also try current working directory
+if not _env_loaded:
+    load_dotenv('.env')
 
 # Environment
 ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
