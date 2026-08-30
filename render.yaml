@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aura-analytics
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd python/api && uvicorn main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b:free
+      - key: SUPABASE_DB_URL
+        sync: false
